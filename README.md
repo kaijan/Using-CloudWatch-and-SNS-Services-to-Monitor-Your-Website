@@ -1,4 +1,4 @@
-# Working with EC2/EBS/RDS/CW/SNS
+# Using CloudWatch and SNS Services to Monitor Your Website
 
 ## Scenario
 The following procedures help you install an Apache web server with PHP and MySQL support on your Amazon Linux instance. You can use this server to host a static website or deploy a dynamic PHP application that reads and writes information to a database.
@@ -328,7 +328,7 @@ Please referred to following architecture of this lab.
 10.6.	If you want to leave the RDS, please press **Ctrl+c** to exit.
 
 
-### Create an alarm in CloudWatch and SNS service
+### Create an alarm in CloudWatch and SNS Service
 
 11.1.   In the AWS Management Console, on service menu, click **CloudWatch**.
 
