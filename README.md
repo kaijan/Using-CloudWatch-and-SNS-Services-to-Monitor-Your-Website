@@ -210,27 +210,23 @@ Please referred to following architecture of this lab.
 
 7.1.    In the navigation pane, click **Subnets**.
 
-7.2.	Select **Public Subnet 1**, scroll down to the Summary tab in the lower pane. Take note of the Availability Zone for this subnet.
-
-7.3.	Select **Public Subnet 2**, scroll down to the Summary tab in the lower pane. Take note of the Availability Zone for this subnet.
-
-7.4.	Click Create Subnet dialog box, enter the following details:
+7.2.	Click Create Subnet dialog box, enter the following details:
 * Name tag : Private Subnet 3
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1a
 * CIDR block : 10.0.5.0/24
 
-7.5.	Click **Yes, Create**.
+7.3.	Click **Create**.
 
-7.6.	Click **Create Subnet**.
+7.4.	Click **Create Subnet**.
 
-7.7.	In Create Subnet dialog box, enter the following details:
+7.5.	In Create Subnet dialog box, enter the following details:
 * Name tag : Private Subnet 4
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1b
 * CIDR block : 10.0.6.0/24
 
-7.8.	Click **Yes, Create**.
+7.6.	Click **Create**.
 
 
 ### Create DB Subnet Group
