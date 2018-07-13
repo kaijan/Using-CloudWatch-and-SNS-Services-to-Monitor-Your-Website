@@ -82,13 +82,13 @@ Please referred to following architecture of this lab.
 2.8.    On **Step5: Tag Instance page**, enter the following information:
 
 * Key: Name
-* Value: LAMP Server
+* Value: Lab Server
 
 2.9.    Click **Next: Configure Security Group**.
 
 2.10.   On **Setp6: Configure Security Group page**, click create a new security group, enter the following information:
 
-* Security group name: LAMPSecurityGroup
+* Security group name: LabSecurityGroup
 * Description: Enable SSH, HTTP and HTTPS access
 
 2.11.   Click **Add Rule**.
@@ -107,7 +107,7 @@ Please referred to following architecture of this lab.
 
 2.17.   Scroll down and click **View Instances**.
 
-2.18.   Wait until LAMP Server shows 2/2 checks passed in the **Status Checks** column. This will take 3‐5 minutes. Use the refresh icon at the top right to check for updates.
+2.18.   Wait until Lab Server shows 2/2 checks passed in the **Status Checks** column. This will take 3‐5 minutes. Use the refresh icon at the top right to check for updates.
 
 
 ### Connect to your instance (Windows only)
@@ -122,7 +122,7 @@ Please referred to following architecture of this lab.
 
 3.4. Specify the same name for the key that you used for the key pair **(ex. amazonec2_keypair_virginia.ppk)**. PuTTY automatically adds the .ppk extension.
 
-3.5. Start **PuTTY.exe**, enter **Host Name**, find host name from AWS console. (select LAMP Server, and copy the **public IP** value.).
+3.5. Start **PuTTY.exe**, enter **Host Name**, find host name from AWS console. (select Lab Server, and copy the **public IP** value.).
 
 ![5.png](/images/5.png)
 
@@ -132,7 +132,7 @@ Please referred to following architecture of this lab.
 
 ![7.jpg](/images/7.jpg)
 
-3.7. Enter **ec2-user**,and press ENTER.You are now logged into your **LAMP Server** instance.
+3.7. Enter **ec2-user**,and press ENTER.You are now logged into your **Lab Server** instance.
 
 ![8.png](/images/8.png)
 
@@ -148,7 +148,7 @@ Please referred to following architecture of this lab.
 * For **path and name of pem**, substitute the path/filename to the .pem file you downloaded.
 * For **public IP**, substitute the public IP address for your **Web Server** instance which you copied into a text editor earlier in the lab.
 
-### Installing and start the LAMP server on EC2
+### Installing and start the Lab server on EC2
 
 5.1.    Update all your software package, enter:
 
@@ -200,8 +200,8 @@ Please referred to following architecture of this lab.
 6.8.	Create an inbound rule with the following details:
 * Type: MySQL/Auora(3306)
 * Protocol: TCP(6)
-* Source: Paste Security Group ID of LAMPSecurityGroup
->Search LAMPSecurityGroup to find sg-xxxxxxxx
+* Source: Paste Security Group ID of LabSecurityGroup
+>Search LabSecurityGroup to find sg-xxxxxxxx
  
 6.9.	Click **Save**.
 
@@ -338,7 +338,8 @@ Please referred to following architecture of this lab.
 
 11.4.	Choose a metric category - EC2 Metrics.
 
-11.5.	Select an instance (LAMPServer ID) and metric - **CPUUtilization**. Click **Next**.
+11.5.	Select an instance (Lab
+Server ID) and metric - **CPUUtilization**. Click **Next**.
 
 ![14.jpg](/images/14.jpg)
 
@@ -359,7 +360,7 @@ Please referred to following architecture of this lab.
 
 >You must confirm the subscription before notifications can be sent.
 
-![16.jpg](/images/16.jpg)
+![16.png](/images/16.png)
 
 11.11.	Choose **Create Alarm**.
 
