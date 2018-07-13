@@ -260,7 +260,7 @@ Please referred to following architecture of this lab.
 
 9.3.	Choose **Launch DB Instance** to start the **Launch DB Instance Wizard**. The wizard opens on the **Select Engine** page.
 
-![11.png](/images/11.png)
+![11.jpg](/images/11.jpg)
 
 9.4.	In the **Select Engine** window, click the **Next** button for the MySQL DB engine.
 
@@ -293,11 +293,11 @@ Please referred to following architecture of this lab.
 
 9.11.	Select **labdbinstance** and scroll down to **DETAILS** wait until **Endpoint** is available or modifying – this may take up to 10 minutes. Use the refresh icon in the top right corner to check for updates.
 
-![12.png](/images/12.png)
+![12.jpg](/images/12.jpg)
 
 9.12.	Copy and save the **Endpoint**, making sure to not copy the :3306 – your **Endpoint**. **Endpoint** should look similar to the following as below example: **db.choi5coyenv6.us-east-1.rds.amazonaws.com**. You will change localhost to this endpoint later.
 
-![13.png](/images/13.png)
+![13.jpg](/images/13.jpg)
 
 
 ### Use EC2 to connect with database
@@ -339,7 +339,7 @@ Please referred to following architecture of this lab.
 
 11.5.	Select an instance (LAMPServer ID) and metric - **CPUUtilization**.
 
-![14.png](/images/14.png)
+![14.jpg](/images/14.jpg)
 
 11.6.	For the Define Alarm step, you can set the alarm.
 
@@ -347,7 +347,7 @@ Please referred to following architecture of this lab.
 
 11.8.	Under Whenever, for is, choose > and type **30**. For for, type **1**.
 
-![15.png](/images/15.png)
+![15.jpg](/images/15.jpg)
 
 11.9.	Under Additional settings, for Treat missing data as, choose **bad (breaching threshold)**, as missing data points may indicate the instance is down
 
@@ -358,7 +358,7 @@ Please referred to following architecture of this lab.
 
 >You must confirm the subscription before notifications can be sent.
 
-![16.png](/images/16.png)
+![16.jpg](/images/16.jpg)
 
 11.11.	Choose Create Alarm.
 
@@ -377,7 +377,7 @@ Please referred to following architecture of this lab.
 
 11.16.	If CPU alarm trggers by Cloudwatch, the email box will get the alarm mail which sent from AWS.
 
-![17.png](/images/17.png)
+![17.jpg](/images/17.jpg)
 
 
 ## Conclusion
