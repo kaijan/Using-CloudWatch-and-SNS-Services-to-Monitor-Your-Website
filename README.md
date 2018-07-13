@@ -235,7 +235,7 @@ Please referred to following architecture of this lab.
 
 8.2.	In the navigation pane, click **Subnet Groups**.
 
-8.3.	In the navigation pane, click **Create Subnet Groups**.
+8.3.	In the navigation pane, click **Create DB Subnet Groups**.
  
 8.4.	On the Create DB Subnet Group page, enter the following details:
 
@@ -243,9 +243,9 @@ Please referred to following architecture of this lab.
 * Description: Lab DB Subnet Group
 * VPC ID: Click My Lab VPC
 
-8.5.	For Add subnet, click Availability zone, choose **us-east-1a**, click subnet, choose **10.0.5.0/24**, then click **Add**.
+8.5.	For Add subnet, click Availability zone, choose **us-east-1a**, click subnet, choose **10.0.5.0/24**, then click **Add subnet**.
 
-8.6.	Choose another Availability Zone **us-east-1b**, click the Availability Zone you selected for Private Subnet 4. For Subnet ID, click **10.0.6.0/24**, then click **Add**.
+8.6.	Choose another Availability Zone **us-east-1b**, click the Availability Zone you selected for Private Subnet 4. For Subnet ID, click **10.0.6.0/24**, then click **Add subnet**.
 
 8.7.	Click **Create**.
 
