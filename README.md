@@ -269,7 +269,6 @@ Please referred to following architecture of this lab.
 9.6.	On the **Specify DB details** page, enter the following details:
 * DB Instance Class: Choose db.t2.small—1 vCPU, 2GiB RAM.
 * Multi-AZ Deployment: Click **Create replica in different zone**.
-* Storage  ype: choose General Purpose (SSD)
 * DB Instance Identifier: LabDBInstance
 * Master Username: labuser
 * Master Password: labpassword
