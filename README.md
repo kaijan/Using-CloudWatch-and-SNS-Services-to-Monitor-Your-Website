@@ -258,20 +258,21 @@ Please referred to following architecture of this lab.
 
 9.2.	In the navigation pane, choose **Instances**.
 
-9.3.	Choose **Launch DB Instance** to start the **Launch DB Instance Wizard**. The wizard opens on the **Select Engine** page.
+9.3.	Choose **Launch DB Instance**, on the **Select Engine** page choose **MySQL**.
 
 ![11.jpg](/images/11.jpg)
 
 9.4.	In the **Select Engine** window, click the **Next** button for the MySQL DB engine.
 
-9.5.	Click **Use case** step. Click **Production-MySQL**. Click **Next**.
+9.5.	On the **Choose Use case** page, click **Production-MySQL**. Click **Next**.
 
-9.6.	On the **Specify DB Details** page, enter the following details:
+9.6.	On the **Specify DB details** page, enter the following details:
 * DB Instance Class: Choose db.t2.small—1 vCPU, 2GiB RAM.
-* Multi-AZ Deployment: Click Yes.
+* Multi-AZ Deployment: Click **Create replica in different zone**.
+* Storage  ype: choose General Purpose (SSD)
 * DB Instance Identifier: LabDBInstance
 * Master Username: labuser
-* Master Password: labpassword.
+* Master Password: labpassword
 * Confirm  Password: labpassword
 
 9.7.	Click **Next**.
@@ -280,7 +281,7 @@ Please referred to following architecture of this lab.
 * VPC: My Lab VPC
 * Subnet Group: dbsubnetgroup
 * Publicly Accessible: No
-* VPC Security Group(s): Select existing VPC Security Group -> **DBSecurityGroup**
+* VPC Security Group(s): Select existing VPC Security Group and select **DBSecurityGroup**, delete **default**.
 * Database Name: sampledb
 * Encryption: **Disable Encrytion**
 * Backup: Backup retention period : **0 days**
@@ -295,7 +296,7 @@ Please referred to following architecture of this lab.
 
 ![12.jpg](/images/12.jpg)
 
-9.12.	Copy and save the **Endpoint**, making sure to not copy the :3306 – your **Endpoint**. **Endpoint** should look similar to the following as below example: **db.choi5coyenv6.us-east-1.rds.amazonaws.com**. You will change localhost to this endpoint later.
+9.12.	Copy and save the **Endpoint**, make sure not to copy the :3306 of your **Endpoint**. **Endpoint** should look similar to the following as below example: **db.choi5coyenv6.us-east-1.rds.amazonaws.com**. You will change localhost to this endpoint later.
 
 ![13.jpg](/images/13.jpg)
 
