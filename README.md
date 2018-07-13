@@ -313,9 +313,9 @@ Please referred to following architecture of this lab.
     
     Is this ok? [y/d/N]: y
 
-10.4.   After installed MySQL, to log-in RDS server, key **mysql ‐h  [Endpoint]  –u [Username] -p**, and press enter to key **[password]**.
+10.4.   After installed MySQL, to log-in RDS server, key **mysql ‐h [Endpoint] –u [Username] -p**, and press enter to key **[password]**.
 
-    [ec2-user ~]$ mysql -h	db.choi5coyenv6.us-west- 2.rds.amazonaws.com -u labuser -p
+    [ec2-user ~]$ mysql -h db.choi5coyenv6.us-east-1.rds.amazonaws.com -u labuser -p
 
 10.5.	If you log-in to RDS, you can see the **mysql>**, and you can use the database.
 
@@ -332,27 +332,27 @@ Please referred to following architecture of this lab.
 
 11.1.   In the AWS Management Console, on service menu, click **CloudWatch**.
 
-11.2.	In the navigation pane, choose **Alarms**, **Create Alarm**.
+11.2.	In the navigation pane, choose **Alarms**, click **Create Alarm**.
 
 11.3.	For the Select **Metric** step, you can set up the metric.
 
 11.4.	Choose a metric category - EC2 Metrics.
 
-11.5.	Select an instance (LAMPServer ID) and metric - **CPUUtilization**.
+11.5.	Select an instance (LAMPServer ID) and metric - **CPUUtilization**. Click **Next**.
 
 ![14.jpg](/images/14.jpg)
 
-11.6.	For the Define Alarm step, you can set the alarm.
+11.6.	For the **Define Alarm** step, you can set the alarm.
 
 11.7.	Under Alarm Threshold, type a unique name for the alarm (for example, **myHighCpuAlarm**) and a description of the alarm (for example, **CPU usage exceeds 30 percent**).
 
-11.8.	Under Whenever, for is, choose > and type **30**. For for, type **1**.
+11.8.	Under Whenever, for is, choose > and type **30**. For for:1, type **1**.
 
 ![15.jpg](/images/15.jpg)
 
-11.9.	Under Additional settings, for Treat missing data as, choose **bad (breaching threshold)**, as missing data points may indicate the instance is down
+11.9.	Under Additional settings, for Treat missing data as, choose **bad (breaching threshold)**, as missing data points may indicate the instance is down.
 
-11.10.	Under Actions, for Whenever this alarm, select State is ALARM. 
+11.10.	Under **Actions**, for Whenever this alarm, select State is ALARM. 
 * For Send notification to, Click **NEW List**.
 * Send notification to: my topic
 * Sendemail : Your email
@@ -361,13 +361,13 @@ Please referred to following architecture of this lab.
 
 ![16.jpg](/images/16.jpg)
 
-11.11.	Choose Create Alarm.
+11.11.	Choose **Create Alarm**.
 
-11.12.	When have alarm, the mailbox will get the alarm mail which sent from AWS
+11.12.	When have alarm, the mailbox will get the alarm mail which sent from AWS.
 
 11.13.	To test SNS function, Log in to your Lab Server instance using SSH.
 
-11.14.	You can test Alarm function. Try to increase CPU Utilization to 30%. you can Log in to your **LAMP Server** though SSH.
+11.14.	You can test Alarm function. Try to increase CPU Utilization to 30%. you can Log in to your **Lab Server** though SSH.
 
     [ec2-user ~]$ sudo yum update -y
     [ec2-user ~]$ sudo yum install stress -y
