@@ -185,7 +185,7 @@ Please referred to following architecture of this lab.
 4.	Click **Create Subnet**.
 
 5.	In Create Subnet dialog box, enter the following details:
-* Name tag : Private Subnet 1
+* Name tag : Private Subnet 2
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1b
 * CIDR block : 10.0.11.0/24
