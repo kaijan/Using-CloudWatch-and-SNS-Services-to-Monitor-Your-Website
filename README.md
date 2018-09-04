@@ -175,7 +175,7 @@ Please referred to following architecture of this lab.
 1.    In the navigation pane, click **Subnets**.
 
 2.	Click Create Subnet dialog box, enter the following details:
-* Name tag : Private Subnet 3
+* Name tag : Private Subnet 1
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1a
 * CIDR block : 10.0.1.0/24
@@ -185,7 +185,7 @@ Please referred to following architecture of this lab.
 4.	Click **Create Subnet**.
 
 5.	In Create Subnet dialog box, enter the following details:
-* Name tag : Private Subnet 4
+* Name tag : Private Subnet 1
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1b
 * CIDR block : 10.0.11.0/24
@@ -210,7 +210,7 @@ In order to build RDS DB instance in subnetgroup, we create subnet group.
 
 5.	To add subnets to subnet group, click Availability zone, choose **us-east-1a**, click subnet, choose **10.0.1.0/24**, then click **Add subnet**.
 
-6.	Choose another Availability Zone **us-east-1b**, click the Availability Zone you selected for Private Subnet 4. For Subnet ID, click **10.0.11.0/24**, then click **Add subnet**.
+6.	Choose another Availability Zone **us-east-1b**, click the Availability Zone you selected for Private Subnet 2. For Subnet ID, click **10.0.11.0/24**, then click **Add subnet**.
 
 7.	Click **Create**.
 
@@ -223,7 +223,7 @@ In order to build RDS DB instance in subnetgroup, we create subnet group.
 
 2.	In the navigation pane, choose **Instances**.
 
-3.	Choose **Launch DB Instance**, on the **Select Engine** page choose **MySQL**.
+3.	Choose **Create database**, on the **Select Engine** page choose **MySQL**.
 
 ![11.png](/images/11.png)
 
@@ -252,7 +252,7 @@ In order to build RDS DB instance in subnetgroup, we create subnet group.
 * Monitoring: **Disable enhanced monitoring**
 * Maintenance : choose **Disable auto minor version upgrade**
 
-9.	Click **Create instance**.
+9.	Click **Create database**.
 
 10.	Click **View DB Instance details**.
 
