@@ -325,7 +325,7 @@ CloudWatch is a monitoring and management service built for developers. You can 
 
 10.	Under **Actions**, for Whenever this alarm, select State is ALARM. 
 * For Send notification to, Click **NEW List**.
-* Send notification to: my topic
+* Send notification to: mytopic
 * Sendemail : Your email
 
 >You must confirm the subscription before notifications can be sent.
