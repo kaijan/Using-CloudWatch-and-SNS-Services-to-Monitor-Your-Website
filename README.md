@@ -3,7 +3,7 @@
 ## Scenario
 The following procedures help you install an Apache web server with PHP and MySQL support on your Amazon Linux instance. You can use this server to host a static website or deploy a dynamic PHP application that reads and writes information to a database.
 
-Please referred to following architecture of this lab.
+Please refer to following architecture of this lab.
 
 ![1.jpg](/images/1.png)
 
@@ -16,53 +16,53 @@ Please referred to following architecture of this lab.
 
 2.    In the navigation pane, click **Your VPCs**.
 
-3.	  Click **Create VPC**, enter the following details:
+3.      Click **Create VPC**, enter the following details:
 
 * Name tag: My Lab VPC
 * IPv4 CIDR block: 10.0.0.0/16
 
-4.	Click **Yes, Create**.
+4.    Click **Yes, Create**.
 
-5.	In the navigation pane, click **Internet Gateways**.
+5.    In the navigation pane, click **Internet Gateways**.
 
-6.	Click **Create Internet Gateway**, enter Name tag as **My Lab IGW**.
+6.    Click **Create Internet Gateway**, enter Name tag as **My Lab IGW**.
 
-7.	Click **Create**.
+7.    Click **Create**.
 
-8.	Choose **My Lab IGW**, click **action** button and choose **Attach to VPC**, and then choose **My Lab VPC** you created, click **Attach**.
+8.    Choose **My Lab IGW**, click **action** button and choose **Attach to VPC**, and then choose **My Lab VPC** you created, click **Attach**.
 
-9.	In the navigation pane, click **Subnets**.
+9.    In the navigation pane, click **Subnets**.
 
-10.	Click **Create Subnet**, enter the following details:
+10.    Click **Create Subnet**, enter the following details:
 
 * Name tag: Public Subnet 1
 * VPC: My Lab VPC
 * Availability Zone : us-east-1a
 * IPv4 CIDR block: 10.0.0.0/24
 
-11.	Click **Create**.
+11.    Click **Create**.
 
-12.	Click **Create Subnet**, enter the following details:
+12.    Click **Create Subnet**, enter the following details:
 
 * Name tag: Public Subnet 2
 * VPC: My Lab VPC
-* Availability Zone : us-east-1b
+* Availability Zone: us-east-1b
 * IPv4 CIDR block: 10.0.10.0/24
 
-13.	Click **Create**.
+13.    Click **Create**.
  
-14.	In the navigation pane, click **Route Tables**. Then choose route table of **My Lab VPC**, in the **Routes** tab, click **Edit**, click **Add another route**, enter **Destination: 0.0.0.0/0**, **Target: igw‐xxxxxxxx**. Click **Save**.
+14.    In the navigation pane, click **Route Tables**. Then choose route table of **My Lab VPC**, in the **Routes** tab, click **Edit**, click **Add another route**, enter **Destination: 0.0.0.0/0**, **Target: igw‐xxxxxxxx**. Click **Save**.
 
-15.	In the **Subnet Associations** tab, click **Edit**, check both **Public Subnet 1** and **Public Subnet 2**, then click **Save**.
+15.    In the **Subnet Associations** tab, click **Edit**, check both **Public Subnet 1** and **Public Subnet 2**, then click **Save**.
 
 
 ### Launch an EC2 instance
 
-1.	In the AWS Management Console, on the service menu, click **EC2**.
+1.    In the AWS Management Console, on the service menu, click **EC2**.
 
-2.	Click **Launch Instance**.
+2.    Click **Launch Instance**.
 
-3.	In the navigation pane, choose Quick Start, in the row for **Amazon Linux AMI 2018.03.0 (HVM)** which ami id is ami-cfe4b2b0, click **Select**.
+3.    In the navigation pane, choose Quick Start, in the row for **Amazon Linux AMI 2018.03.0 (HVM)** which ami id is ami-cfe4b2b0, click **Select**.
 
 ![2.png](/images/2.png)
 
@@ -125,13 +125,13 @@ Please referred to following architecture of this lab.
 3.    Start Apache web server.
 
     [ec2-user ~]$ sudo service httpd start
-    Starting httpd: 				[ OK ]
+    Starting httpd:                 [ OK ]
 
 4.    Use the **chkconfig** command to configure the Apache web server to start at each system boot.
 
     [ec2-user ~]$ sudo chkconfig httpd on
     [ec2-user ~]$ chkconfig --list httpd 
-    httpd		0:off	1:off	2:on	3:on	4:on	5:on	6:off
+    httpd        0:off    1:off    2:on    3:on    4:on    5:on    6:off
 
 >Note: The chkconfig command does not provide any confirmation message when you successfully use it to enable a service. You can verify that **httpd** dos on by running the following command:
 
@@ -143,105 +143,105 @@ Please referred to following architecture of this lab.
 
 ### Create a VPC security group for the RDS DB Instance
 
-1.	In the AWS Management Console, on the service menu, click **VPC**.
+1.    In the AWS Management Console, on the service menu, click **VPC**.
 
-2.	In the navigation, click **Security Groups**.
+2.    In the navigation, click **Security Groups**.
 
-3.	Click **Create Security Group**.
+3.    Click **Create Security Group**.
 
-4.	In the Create Security Group dialog box, enter the following details:
+4.    In the Create Security Group dialog box, enter the following details:
 * Name tag: DBSecurityGroup
 * Group name: DBSecurityGroup
 * Description: DB instance security group
 * VPC: Click My Lab VPC
 
-5.	Click **Yes, Create**.
+5.    Click **Yes, Create**.
 
-6.	Select **DBSecurityGroup** you just created.
+6.    Select **DBSecurityGroup** you just created.
 
-7.	Click the **Inbound Rules** tab, and then click **Edit**.
+7.    Click the **Inbound Rules** tab, and then click **Edit**.
 
-8.	Create an inbound rule with the following details:
+8.    Create an inbound rule with the following details:
 * Type: MySQL/Auora(3306)
 * Protocol: TCP(6)
 * Source: Paste Security Group ID of LabSecurityGroup
 >Search LabSecurityGroup to find sg-xxxxxxxx
  
-9.	Click **Save**.
+9.    Click **Save**.
 
 
 ### Create Private Subnets for Your Amazon RDS Instances
 
 1.    In the navigation pane, click **Subnets**.
 
-2.	Click Create Subnet dialog box, enter the following details:
+2.    Click Create Subnet dialog box, enter the following details:
 * Name tag : Private Subnet 1
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1a
 * CIDR block : 10.0.1.0/24
 
-3.	Click **Create**.
+3.    Click **Create**.
 
-4.	Click **Create Subnet**.
+4.    Click **Create Subnet**.
 
-5.	In Create Subnet dialog box, enter the following details:
+5.    In create subnet dialog box, enter the following details:
 * Name tag : Private Subnet 2
 * VPC : Select My Lab VPC
 * Availability Zone : us-east-1b
 * CIDR block : 10.0.11.0/24
 
-6.	Click **Create**.
+6.    Click **Create**.
 
 
 ### Create DB Subnet Group
-In order to build RDS DB instance in subnetgroup, we create subnet group. 
+In order to build RDS DB instance in subnetgroup, we create a subnet group. 
 
-1.	In the AWS Management Console, on the service menu, click **RDS**.
+1.    In the AWS Management Console, on the service menu, click **RDS**.
 
-2.	In the navigation pane, click **Subnet Groups**.
+2.    In the navigation pane, click **Subnet Groups**.
 
-3.	In the navigation pane, click **Create DB Subnet Groups**.
+3.    In the navigation pane, click **Create DB Subnet Groups**.
  
-4.	On the Create DB Subnet Group page, enter the following details:
+4.    On the Create DB Subnet Group page, enter the following details:
 
 * Name: dbsubnetgroup
 * Description: Lab DB Subnet Group
 * VPC ID: Click My Lab VPC
 
-5.	To add subnets to subnet group, click Availability zone, choose **us-east-1a**, click subnet, choose **10.0.1.0/24**, then click **Add subnet**.
+5.    To add subnets to subnet group, click Availability zone, choose **us-east-1a**, click subnet, choose **10.0.1.0/24**, then click **Add subnet**.
 
-6.	Choose another Availability Zone **us-east-1b**, click the Availability Zone you selected for Private Subnet 2. For Subnet ID, click **10.0.11.0/24**, then click **Add subnet**.
+6.    Choose another Availability Zone **us-east-1b**, click the Availability Zone you selected for Private Subnet 2. For Subnet ID, click **10.0.11.0/24**, then click **Add subnet**.
 
-7.	Click **Create**.
+7.    Click **Create**.
 
-8.	If you do not see your new subnet group, click the refresh icon in the upper-right corner of the console.
+8.    If you do not see your new subnet group, click the refresh icon in the upper-right corner of the console.
 
 
-### Launch a RDS DB instance with MySQL engine
+### Launch an RDS DB instance with MySQL engine
 
-1.	In the AWS Management Console, on the service menu, click **RDS**.
+1.    In the AWS Management Console, on the service menu, click **RDS**.
 
-2.	In the navigation pane, choose **Instances**.
+2.    In the navigation pane, choose **Instances**.
 
-3.	Choose **Create database**, on the **Select Engine** page choose **MySQL**.
+3.    Choose **Create database**, on the **Select Engine** page choose **MySQL**.
 
 ![11.png](/images/11.png)
 
-4.	In the **Select Engine** window, click the **Next** button for the MySQL DB engine.
+4.    In the **Select Engine** window, click the **Next** button for the MySQL DB engine.
 
-5.	On the **Choose Use case** page, click **Production-MySQL**. Click **Next**.
+5.    On the **Choose Use case** page, click **Production-MySQL**. Click **Next**.
 
-6.	On the **Specify DB details** page, enter the following details:
+6.    On the **Specify DB details** page, enter the following details:
 * DB Instance Class: Choose db.t2.small—1 vCPU, 2GiB RAM.
 * Multi-AZ Deployment: Click **Create replica in different zone**.
 * DB Instance Identifier: LabDBInstance
-* Master Username: labuser (Please remenber this username!)
+* Master Username: labuser (Please remember this username!)
 * Master Password: labpassword
 * Confirm  Password: labpassword
 
-7.	Click **Next**.
+7.    Click **Next**.
 
-8.	On the **Configure Advanced Setting**s page, enter the following details and leave all other values with their default:
+8.    On the **Configure Advanced Setting**s page, enter the following details and leave all other values with their default:
 * VPC: My Lab VPC
 * Subnet Group: dbsubnetgroup
 * Publicly Accessible: No
@@ -252,78 +252,78 @@ In order to build RDS DB instance in subnetgroup, we create subnet group.
 * Monitoring: **Disable enhanced monitoring**
 * Maintenance : choose **Disable auto minor version upgrade**
 
-9.	Click **Create database**.
+9.    Click **Create database**.
 
-10.	Click **View DB Instance details**.
+10.    Click **View DB Instance details**.
 
-11.	Select **labdbinstance** and scroll down to **DETAILS** wait until **Endpoint** is available or modifying – this may take up to 10 minutes. Use the refresh icon in the top right corner to check for updates.
+11.    Select **labdbinstance** and scroll down to **DETAILS** wait until **Endpoint** is available or modifying – this may take up to 10 minutes. Use the refresh icon in the top right corner to check for updates.
 
 ![12.png](/images/12.png)
 
-12.	Copy and save the **Endpoint**, make sure not to copy the :3306 of your **Endpoint**. **Endpoint** should look similar to the following as below example: **db.choi5coyenv6.us-east-1.rds.amazonaws.com**. You will change localhost to this endpoint later.
+12.    Copy and save the **Endpoint**, make sure not to copy the :3306 of your **Endpoint**. **Endpoint** should look similar to the following as below example: **db.choi5coyenv6.us-east-1.rds.amazonaws.com**. You will change localhost to this endpoint later.
 
->Note: "db.choi5coyenv6" is a random generated number.
+>Note: "db.choi5coyenv6" is a randomly generated number.
 
 ![13.png](/images/13.png)
 
 
 ### Use EC2 to connect with database
 
-1.	Log in to your **Lab Server** instance using SSH.
+1.    Log in to your **Lab Server** instance using SSH.
 
-2.	Install MySQL tool.
+2.    Install MySQL tool.
 
-	    [ec2-user ~]$ sudo yum install mysql
+        [ec2-user ~]$ sudo yum install mysql
 
-3.	After check state, please key **y** to start install.
+3.    After check state, please key **y** to start install.
     
-    	Is this ok? [y/d/N]: y
+        Is this ok? [y/d/N]: y
 
 4.  After installed MySQL, to log-in RDS server, key **mysql ‐h [Endpoint] –u [Username] -p**, and press enter to key **[password]**.
 
-    	[ec2-user ~]$ mysql -h db.choi5coyenv6.us-east-1.rds.amazonaws.com -u labuser -p
+        [ec2-user ~]$ mysql -h db.choi5coyenv6.us-east-1.rds.amazonaws.com -u labuser -p
 
->Note: "db.choi5coyenv6" is a random generated number.
+>Note: "db.choi5coyenv6" is a randomly generated number.
 
 
-5.	If you log-in to RDS, you can see the **mysql>**, and you can use the database.
+5.    If you log-in to RDS, you can see the **mysql>**, and you can use the database.
 
-  	 	mysql> select database();
-    	+------------+
-   		| database() |
-   		+------------+
-   		| NULL	|
+           mysql> select database();
+        +------------+
+           | database() |
+           +------------+
+           | NULL    |
 
-6.	If you want to leave the RDS, please press **Ctrl+c** to exit.
+6.    If you want to leave the RDS, please press **Ctrl+c** to exit.
 
 
 ### Create an alarm in CloudWatch and SNS Service
 
-CloudWatch is a monitoring and management service built for developers. You can use CloudWatch to set high resolution alarms to ensure instances are running smoothly.
+CloudWatch is a monitoring and management service built for developers. You can use CloudWatch to set high-resolution alarms to ensure instances are running smoothly.
 
-1.   In the AWS Management Console, on service menu, click **CloudWatch**.
+1.   In the AWS Management Console, on the service menu, click **CloudWatch**.
 
-2.	In the navigation pane, choose **Alarms**, click **Create Alarm**.
+2.    In the navigation pane, choose **Alarms**, click **Create Alarm**.
 
-3.	For the Select **Metric** step, you can set up the metric.
+3.    For the Select **Metric** step, you can set up the metric.
 
-4.	Choose a metric category - EC2 Metrics.
+4.    Choose a metric category - EC2 Metrics.
 
-5.	Select an instance (Lab Server ID) and metric - **CPUUtilization**. Click **Next**.
+5.    Select an instance (Lab Server ID) and metric - **CPUUtilization**. Click **Next**.
 
 ![14.jpg](/images/14.jpg)
 
-6.	For the **Define Alarm** step, you can set the alarm.
+6.    For the **Define Alarm** step, you can set the alarm.
 
-7.	Under Alarm Threshold, type a unique name for the alarm (for example, **myHighCpuAlarm**) and a description of the alarm (for example, **CPU usage exceeds 30 percent**).
+7.    Under Alarm Threshold, type a unique name for the alarm (for example, **myHighCpuAlarm**) and a description of the alarm (for example, **CPU usage exceeds 30 percent**).
 
-8.	Under Whenever, for is, choose > and type **30**. For for:1, type **1**.
+8.    Whenever, for is, choose > and type **30**. For for:1, type **1**.
 
 ![15.jpg](/images/15.jpg)
 
-9.	Under Additional settings, for Treat missing data as, choose **bad (breaching threshold)**, as missing data points may indicate the instance is down.
+9.    Under Additional settings, for Treat missing data as, choose **bad (breaching threshold)**, as missing data points may indicate the instance is down.
 
-10.	Under **Actions**, for Whenever this alarm, select State is ALARM. 
+10.    Under **Actions**, for Whenever this alarm, select State is ALARM. 
 * For Send notification to, Click **NEW List**.
 * Send notification to: mytopic
 * Sendemail : Your email
@@ -332,21 +332,21 @@ CloudWatch is a monitoring and management service built for developers. You can 
 
 ![16.png](/images/16.png)
 
-11.	Choose **Create Alarm**.
+11.    Choose **Create Alarm**.
 
-12.	When have alarm, the mailbox will get the alarm mail which sent from AWS.
+12.    When have an alarm, the mailbox will get the alarm mail which sent from AWS.
 
-13.	To test SNS function, Log in to your Lab Server instance using SSH.
+13.    To test SNS function, Log in to your Lab Server instance using SSH.
 
-14.	You can test Alarm function. Try to increase CPU Utilization to 30%. you can Log in to your **Lab Server** though SSH.
+14.    You can test the Alarm function. Try to increase CPU Utilization to 30%. you can Log in to your **Lab Server** though SSH.
 
     [ec2-user ~]$ sudo yum install stress -y
 
-15.	Burn up CPU in 120s.
+15.    Burn up CPU in 120s.
 
     [ec2-user ~]$ sudo stress --cpu 1 --timeout 120
 
-16.	If CPU alarm trggers by Cloudwatch, the email box will get the alarm mail which sent from AWS.
+16.    If CPU alarm triggers by Cloudwatch, the email box will get the alarm mail which sent from AWS.
 
 ![17.jpg](/images/17.jpg)
 
@@ -355,7 +355,7 @@ CloudWatch is a monitoring and management service built for developers. You can 
 
 Congratulations! You now have learned how to:
 * Logged into Amazon Management Console
-* Create an Amazon Linux Instance from and Amazon Machine Image (AMI).
+* Create an Amazon Linux Instance from an Amazon Machine Image (AMI).
 * Find your instance in the Amazon Management Console
 * Logged into your instance
 * Setup network security included subnets and security group.
@@ -369,12 +369,12 @@ Congratulations! You now have learned how to:
 
 ### Connect to your instance (Linux/OSX only)
 
->Note: This section is for Linux and Max OSX users only. If you are running Windows but have not yet connected to your instance, go back to previous step. If you have already connected to your instance, skip ahead to next step.
+>Note: This section is for Linux and Mac OSX users only. If you are running Windows but have not yet connected to your instance, go back to the previous step. If you have already connected to your instance, skip ahead to next step.
 
 1. To connect to your EC2 instance, run the following commands in Terminal:
-	
-	chmod 400  <path and name of pem>
-	ssh –i <path and name of pem> ec2-user@<public IP>
+    
+    chmod 400  <path and name of pem>
+    ssh –i <path and name of pem> ec2-user@<public IP>
 
 * For **path and name of pem**, substitute the path/filename to the .pem file you downloaded.
 * For **public IP**, substitute the public IP address for your **Web Server** instance which you copied into a text editor earlier in the lab.
@@ -392,7 +392,7 @@ Congratulations! You now have learned how to:
 
 4. Specify the same name for the key that you used for the key pair **(ex. amazonec2_keypair_virginia.ppk)**. PuTTY automatically adds the .ppk extension.
 
-5. Start **PuTTY.exe**, enter **Host Name**, find host name from AWS console. (select Lab Server, and copy the **public IP** value.).
+5. Start **PuTTY.exe**, enter **Host Name**, find hostname from AWS console. (select Lab Server, and copy the **public IP** value.).
 
 ![5.png](/images/5.png)
 
