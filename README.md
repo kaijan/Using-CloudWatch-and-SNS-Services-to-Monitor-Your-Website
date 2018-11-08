@@ -62,50 +62,49 @@ Please refer to following architecture of this lab.
 
 2.2.    Click **Launch Instance**.
 
-2.3.    In the navigation pane, choose Quick Start, in the row for **Amazon Linux AMI 2018.03.0 (HVM)** which ami id is ami-cfe4b2b0, click **Select**.
+2.3.    In the navigation pane, choose Quick Start, in the row for **Amazon Linux AMI 2018.03.0 (HVM)**, click **Select**.
 
 ![2.png](/images/2.png)
 
-2.4.    On **Step2: Choose a Instance Type page**, make sure **t2.micro** is selected and click **Next: Configure Instance Details**.
+2.4.    On **Step2: Choose a Instance Type** page, make sure **t2.micro** is selected and click **Next: Configure Instance Details**.
 
-2.5.    On **Step3: Configure Instance Details page**, enter the following and leave all other values with their default:
+2.5.    On **Step3: Configure Instance Details** page, enter the following and leave all other values with their default:
+
 * Network: My Lab VPC
 * Subnet: Public Subnet 1
 * Auto-assign Public IP: click **Enable**
 
 2.6.    Click **Next: Add Storage**, leave all values with their default.
 
-2.7.    Click **Next: Add Tag**.
-
-2.8.    On **Step5: Tag Instance page**, enter the following information:
+2.7.    Click **Next: Add Tag** on **Step5: Add Tags** page, enter the following information:
 
 * Key: Name
 * Value: Lab Server
 
-2.9.    Click **Next: Configure Security Group**.
+2.8.    Click **Next: Configure Security Group**.
 
-2.10.   On **Setp6: Configure Security Group page**, click create a new security group, enter the following information:
+2.9.   On **Setp6: Configure Security Group page**, click create a new security group, enter the following information:
 
 * Security group name: LabSecurityGroup
 * Description: Enable SSH, HTTP and HTTPS access
 
-2.11.   Click **Add Rule**.
+2.10.   Click **Add Rule**.
 
-2.12.   For Type, click SSH (22), HTTP (80) and HTTPs (443).
+2.11.   For Type, click SSH (22), HTTP (80) and HTTPs (443).
 
 ![3.png](/images/3.png)
 
-2.13.   Click **Review and Launch**.
+2.12.   Click **Review and Launch**.
 
-2.14.   Review the instance information and click **Launch**.
+2.13.   Review the instance information and click **Launch**.
 
-2.15.   Click Create a new key pair, enter the Key pair name (ex. amazonec2_keypair_virginia), click **Download Key Pair**.
+2.14.   Click Create a new key pair, enter the Key pair name (ex. amazonec2_keypair_virginia), click **Download Key Pair**.
 
-2.16.   Click **Launch Instance**s.
+2.15.   Click **Launch Instances**.
 
-2.17.   Scroll down and click **View Instances**.
+2.16.   Scroll down and click **View Instances**.
 
-2.18.   Wait until Lab Server shows 2/2 checks passed in the **Status Checks** column. This will take 3‐5 minutes. Use the refresh icon at the top right to check for updates.
+2.17.   Wait until Lab Server shows 2/2 checks passed in the **Status Checks** column. This will take 3‐5 minutes. Use the refresh icon at the top right to check for updates.
 
 ### Connect to EC2 reference below
 * [**AWS Documents**](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
