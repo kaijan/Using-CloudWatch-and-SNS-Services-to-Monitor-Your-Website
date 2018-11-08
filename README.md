@@ -21,7 +21,7 @@ Please refer to following architecture of this lab.
 * Name tag: My Lab VPC
 * IPv4 CIDR block: 10.0.0.0/16
 
-1.4.    Click **Yes, Create**.
+1.4.    Click **Create**.
 
 1.5.    In the navigation pane, click **Internet Gateways**.
 
