@@ -83,7 +83,7 @@ Please refer to following architecture of this lab.
 
 2.8.    Click **Next: Configure Security Group**.
 
-2.9.   On **Setp6: Configure Security Group page**, click create a new security group, enter the following information:
+2.9.   On **Setp6: Configure Security Group** page, click create a new security group, enter the following information:
 
 * Security group name: LabSecurityGroup
 * Description: Enable SSH, HTTP and HTTPS access
